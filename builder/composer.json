@@ -1,0 +1,8 @@
+{
+    "name": "demondehellis/jigsaw",
+    "description": "Jigsaw Boilerplate",
+    "type": "project",
+    "require": {
+        "tightenco/jigsaw": "^1.6"
+    }
+}

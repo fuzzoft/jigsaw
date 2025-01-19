@@ -1,0 +1,17 @@
+services:
+  builder:
+    build: .
+    volumes:
+      - ./builder:/app
+      - ./source:/source
+      - ./public:/public
+    command: /app/build watch
+    
+  server:
+    build: .
+    volumes:
+      - ./builder:/app
+      - ./public:/public
+    command: jigsaw serve --no-build --host=0.0.0.0
+    ports:
+      - ${PORT:-8000}:8000

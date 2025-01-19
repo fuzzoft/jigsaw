@@ -1,0 +1,9 @@
+public
+source/assets/*
+**/cache/
+**/node_modules/
+**/vendor/
+/.idea/
+/.vscode/
+npm-debug.log
+.aider*

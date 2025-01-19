@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Build the site
+composer install && npm install && npm run dev && jigsaw build -q;
+
+if [ "$1" == "watch" ]; then
+  # Watch for changes in the /source directory
+  while true; do
+    inotifywait -r -e modify,create,delete /source
+    npm run dev && jigsaw build -q
+  done
+fi
